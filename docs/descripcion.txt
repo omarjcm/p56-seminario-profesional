@@ -1,0 +1,5 @@
+UNIVERSIDAD POLITÉCNICA SALESIANA
+Carrera de Ingeniería de Sistemas
+SEMINARIO PROFESIONAL - Node.js + MongoDB
+
+clases - Diapositivas sobre las clases de este seminario.
