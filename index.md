@@ -5,5 +5,7 @@ Este seminario profesional permitirá generar la competencia para implementar ap
 ### Sesión de Clases
 
 - Lunes, 21/09/2020: [Comandos de GIT](https://www.youtube.com/watch?v=tIicUjAI_Hk)
-- Martes, 22/09/2020: [GIT & Github]()
+- Martes, 22/09/2020: [GIT & Github](https://www.youtube.com/watch?v=HNBR3OmeyZw)
+- Miércoles, 23/09/2020: [Fundamentos de Javascript (I Parte)](https://www.youtube.com/watch?v=1gkGuONRvJw)
+- Jueves, 24/09/2020: [Fundamentos de Javascript (II Parte)](https://www.youtube.com/watch?v=D2cD55oZ_TI)
 
