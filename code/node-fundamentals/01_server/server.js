@@ -9,13 +9,16 @@ app.use( bodyParser.urlencoded( {extended:false} ) )
 app.use( router )
 
 router.get('/carrera', function(req, res) {
+    console.log( req.headers )
+
     res.send( 'Lista de Carreras de la UPS.' )
 })
 router.post('/carrera', function(req, res) {
-    console.log( req.body )
-    console.log( req.query )
-    
-    res.status(201).send( { tipo_error:0, mensaje_error:'', mensaje_exito: 'Añadido Exitosamente.' } )
+    if (req.query.error == 'ok') {
+        res.status(500).send( { tipo_error:1, mensaje_error:'Error en el Servidor.', mensaje_exito: '' } )
+    } else {
+        res.status(200).send( { tipo_error:0, mensaje_error:'', mensaje_exito: 'Todo ok.' } )
+    }    
 })
 
 
