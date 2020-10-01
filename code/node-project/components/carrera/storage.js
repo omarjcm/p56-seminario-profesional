@@ -1,27 +1,32 @@
-const list = []
+const model = require('./model')
 
 function addCarrera( objeto ) {
-    list.push( objeto )
+    const carrera = new model( objeto )
+    carrera.save()
 }
 
-function getCarreras() {
-    return list
-}
-
-function updateCarrera( objeto ) {
-    for (let i=0; i<list.length; i++) {
-        if (list[i].nombre == objeto.nombre) {
-            list[i] = objeto
-        }
+async function getCarreras( filtroCarrera ) {
+    let filtro = {}
+    if (filtroCarrera != null) {
+        filtro = { nombre : filtroCarrera }
     }
+    const carreraList = await model.find( filtro )
+    return carreraList
 }
 
-function deleteCarrera(nombre) {
-    for (let i=0; i<list.length; i++) {
-        if (list[i].nombre == nombre) {
-            delete list[i]
-        }
-    }
+async function updateCarrera( idCarrera, objeto ) {
+    const foundCarrera = await model.findOne({ _id: idCarrera })
+
+    foundCarrera.nombre = objeto.nombre
+    foundCarrera.abreviatura = objeto.abreviatura
+    foundCarrera.descripcion = objeto.descripcion
+
+    const result = await foundCarrera.save()
+    return result
+}
+
+function deleteCarrera(idCarrera) {
+    return model.deleteOne({ _id: idCarrera })
 }
 
 module.exports = {
